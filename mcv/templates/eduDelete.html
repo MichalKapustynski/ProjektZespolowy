@@ -1,0 +1,57 @@
+<!doctype html>
+
+  <head>
+    <title>Kreator CV</title>
+    <style>
+      h1{font-family: Arial, Helvetica, sans-serif;font-weight: lighter; border: 1cm; color: orange;}
+      h2{text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      h3{text-align: left;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      div{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      p{font-size: small;}
+      
+      
+    </style>
+  </head>
+  <h1>
+Usunąć element: {{object.school_time}} {{object.school}}?  </h1>
+  <HR noshade color="green">
+  <body>
+    
+
+    <div>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{form}}
+            {% csrf_token %}
+            <button type="submit">Tak</button>
+            </form>
+            <br>
+            <a href = "{% url 'cv:add_edu' %}">Nie</a>
+    
+    </div>
+    
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

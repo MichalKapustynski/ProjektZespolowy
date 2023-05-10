@@ -1,0 +1,96 @@
+<!doctype html>
+
+  <head>
+    <title>Kreator CV</title>
+    <style>
+      h1{font-family: Arial, Helvetica, sans-serif;font-weight: lighter; border: 1cm; color: orange;}
+      h2{text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      h3{text-align: left;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      div{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      p{font-size: small;}
+      
+      
+    </style>
+  </head>
+  <h1>
+Proszę wprowadzić dane o zatrudnieniu
+  </h1>
+  <HR noshade color="green">
+  <body>
+    
+
+    <div>
+    {% block body %}
+    
+        <form method="POST" action="" enctype="multipart/form-data">
+         {{form}}
+        {% csrf_token %}
+        <button type="submit">Dodaj</button>
+        </form>
+    
+    {% endblock %}
+    </div>
+    <p>
+        {% for e in exp%}
+
+        {{e.time}}
+        {{e.exp}}
+        <a href="{% url 'cv:exp_delete' e.id %}">Usuń</a>
+        <br>
+
+        {% endfor %}
+
+    </p>
+    <h2>
+         <a href = "{% url 'cv:add_edu' %}">Dane o wykształceniu</a>
+    <h2>
+    <h3>
+        <a href = "{% url 'cv:add_cv' %}">Powrót do strony głównej</a>
+   <h3>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

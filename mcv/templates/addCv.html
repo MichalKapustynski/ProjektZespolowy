@@ -1,0 +1,32 @@
+<!doctype html>
+
+  <head>
+    <title>Kreator CV</title>
+    <style>
+      h1{font-family: Arial, Helvetica, sans-serif;font-weight: lighter; border: 1cm; color: orange;}
+      div{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      button{background-color: = blue;}
+      
+    </style>
+  </head>
+  <h1>
+Proszę wprowadzić dane osobowe:
+  </h1>
+  <HR noshade color="green">
+  <body>
+    <div>
+    {% block body %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div>
+        {{form.as_ul}}
+        {% csrf_token %}
+        </div>
+        <br><br>
+        <p><button type="submit">Dane dotyczące zatrudnienia</button></p>
+    
+        </form>
+    {% endblock %}
+    </div>
+  </body>
+</html>
+

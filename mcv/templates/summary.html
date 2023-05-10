@@ -1,0 +1,104 @@
+{% load thumbnail %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Curriculum vitae</title>
+<style>
+    h1 {text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        }
+    h2 {  float: right;
+        width: 300px;
+        height: 500px;
+        }
+    h3 {text-align: left;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+        }
+    h4 {text-align: left;
+        font-family: 'Times New Roman', Times, serif;}
+    h5 {font-size: large;
+        font-family: 'Times New Roman', Times, serif;
+        }
+    h6 {font-size: large;
+        font-family: 'Times New Roman', Times, serif}
+    
+    div {font-family: Arial, Helvetica, sans-serif;}
+ </style>
+</head>
+<body>
+    <div>
+        <h1>
+           Curriculum vitae
+       </h1>
+       <br>
+       <br>
+       <br><br>
+    </div>
+   
+    <div>
+    <h2>
+        {% for p in person %}
+        {% thumbnail p.photo "100x100" crop="right" as im %}
+        <img src="{{im.url}}" width="200" height="200">
+        {% endthumbnail %}
+        {% endfor %}
+    </h2>
+    </div>
+
+    <div>
+        
+        <h3>
+        {% for p in person %}
+        {{p.name}}
+        {{p.last_name}}
+        {% endfor %}   
+        
+        </h3>    
+        
+        </div>
+<div>
+
+<h4>
+Dane osobowe
+</h4>
+
+    {% for p in person %}
+    <p>adres e-mail: {{p.mail}}</p>
+    <p>numer telefonu: {{p.phone_number}}</p>
+    <p>adres: {{p.address}}</p>
+    
+    {% endfor %}
+</div>
+<br><br>  <br>
+<HR size="3" noshade color="silver">
+<div>
+<h5>
+Doświadczenie zawodowe
+</h5>
+{% for e in exp%}
+
+{{e.time }}             {{e.exp}}
+<br>
+{% endfor %}
+</div>
+
+<br><br>  
+<HR size="3" noshade color="silver">
+<div>
+<h6>
+Wykształcenie
+</h6>
+{% for e in edu%}
+
+{{e.school_time}}
+{{e.school}}
+<br>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

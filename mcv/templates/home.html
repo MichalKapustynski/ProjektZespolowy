@@ -1,0 +1,29 @@
+<!doctype html>
+
+  <head>
+    <title>Kreator CV</title>
+    <style>
+      h1{font-family: Arial, Helvetica, sans-serif;font-weight: lighter; border: 1cm; color: orange;}
+      div{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: yellowgreen;}
+      
+      
+    </style>
+  </head>
+  <h1>
+Kreator CV - proszę wprowadzić niezbędne dane
+  </h1>
+  <HR noshade color="green">
+  <body>
+    <div>
+    {% block body %}
+    
+        <a href = "{% url 'cv:add_cv' %}">Rozpocznij</a>
+    
+    {% endblock %}
+    </div>
+  </body>
+</html>
+
+
+
+
